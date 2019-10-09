@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/numero.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/components</a> numero.vue
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/1</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/6</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;!--
+&lt;template&gt;
+  &lt;v-container&gt;
+&nbsp;
+&nbsp;
+   &lt;div class="text-center"&gt;
+    &lt;v-btn numero=7 @click="añadir(7)" id='n7' class="ma-2" outlined large fab color="indigo"&gt;7&lt;/v-btn&gt;
+    &lt;v-btn numero=8 @click="añadir(8)" id='n8' class="ma-2" outlined large fab color="indigo"&gt;8&lt;/v-btn&gt;
+    &lt;v-btn numero=9 @click="añadir(9)" id='n9' class="ma-2" outlined large fab color="indigo"&gt;9&lt;/v-btn&gt;
+  &lt;/div&gt;
+&nbsp;
+  
+  &lt;div class="text-center" &gt;
+    &lt;v-btn numero=4 @click="añadir(4)" id='n4' class="ma-2"  outlined large fab color="indigo" &gt;4&lt;/v-btn&gt;
+    &lt;v-btn numero=5 @click="añadir(5)" id='n5' class="ma-2" outlined large fab color="indigo"&gt;5&lt;/v-btn&gt;
+    &lt;v-btn numero=6 @click="añadir(6)" id='n6' class="ma-2" outlined large fab color="indigo"&gt;6&lt;/v-btn&gt;
+  &lt;/div&gt;
+&nbsp;
+&nbsp;
+&nbsp;
+  &lt;div class="text-center"&gt;
+    &lt;v-btn numero=1 @click="añadir(1)" id='n1' class="ma-2" outlined large fab color="indigo"&gt;1 &lt;/v-btn&gt;
+    &lt;v-btn numero=2 @click="añadir(2)" id='n2' class="ma-2" outlined large fab color="indigo"&gt;2&lt;/v-btn&gt;
+    &lt;v-btn numero=3 @click="añadir(3)" id='n3' class="ma-2" outlined large fab color="indigo"&gt;3&lt;/v-btn&gt;
+  &lt;/div&gt;
+&nbsp;
+&nbsp;
+ 
+  &lt;/v-container&gt;
+&nbsp;
+&lt;/template&gt;
+--&gt;
+&lt;template&gt;
+    &lt;v-btn outlined large fab v-on:click="anadir"&gt;
+&nbsp;
+    {{numeroEntrada}}
+  &lt;/v-btn&gt;
+&nbsp;
+&nbsp;
+&nbsp;
+&lt;/template&gt;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&lt;script&gt;
+  export default {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    data: () =&gt; ({</span></span>
+    }),
+    methods: {
+        anadir(event){
+<span class="cstat-no" title="statement not covered" >        console.log(this.numeroEntrada)</span>
+<span class="cstat-no" title="statement not covered" >            if (this.$store.getters.getprimera=="") {</span>
+<span class="cstat-no" title="statement not covered" >                this.$store.commit('SET_PRIMERA', this.numeroEntrada)	</span>
+            }else{
+<span class="cstat-no" title="statement not covered" >                this.$store.commit('SET_SEGUNDA', this.numeroEntrada)	</span>
+            }
+<span class="cstat-no" title="statement not covered" >            console.log( "1º numero "+ this.$store.getters.getprimera + " 2º numero "+ this.$store.getters.getsegunda  )</span>
+        }
+    },props: {
+      numeroEntrada: { 
+             type:String, required: true 
+      }
+    }
+&nbsp;
+  }
+&lt;/script&gt;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Oct 09 2019 18:04:40 GMT+0200 (GMT+02:00)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
