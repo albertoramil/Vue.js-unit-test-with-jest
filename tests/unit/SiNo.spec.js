@@ -9,6 +9,7 @@ describe('YesNoComponent', () => {
         // comprueba que YesNoComponent es un componente. 
         const wrapper = shallowMount(YesNoComponent)
         expect(wrapper.isVueInstance()).toBeTruthy()
+        console.log("pasa")
     })
 
 

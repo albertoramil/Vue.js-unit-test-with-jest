@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">7.69% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/13</span>
+        <span class='fraction'>1/13</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>0/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>1/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">7.69% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/13</span>
+        <span class='fraction'>1/13</span>
       </div>
     </div>
   </div>
@@ -138,21 +138,7 @@
 93
 94
 95
-96
-97
-98
-99
-100
-101
-102
-103
-104
-105
-106
-107
-108
-109
-110</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+96</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -199,21 +185,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -225,26 +197,26 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -290,83 +262,69 @@
 &lt;template&gt;
   &lt;v-form&gt;
     &lt;v-container&gt;
-         &lt;v-form
-      ref="form"
-      v-model="habilitar"
-    &gt;
-          &lt;v-text-field
-            v-model="perro"
-                  :rules="[v =&gt; !!v || '']"
+      &lt;v-form ref="form" v-model="habilitar"&gt;
+        &lt;v-text-field
+        data-test="entradaPerro"
+          v-model="perro"
+          :rules="[v =&gt; !!v || '']"
+          maxlength="25"
+          hint="Tamaño máximo"
+          label="Introduce el nombre del perro"
+        &gt;&lt;/v-text-field&gt;
 &nbsp;
-            maxlength="25"
-            hint="Tamaño máximo"
-            label="Introduce el nombre del perro"
-          &gt;&lt;/v-text-field&gt;
-&nbsp;
-         &lt;v-btn
-               :disabled="!habilitar"
-&nbsp;
-        color="success"
-        class="mr-4"
-        @click="handleClick"&gt;
-        Ver Pedigree
-      &lt;/v-btn&gt; 
-          &lt;/v-form&gt;
-&nbsp;
+        &lt;v-btn  color="success" data-test="handleClickButton" class="mr-4" @click="handleClick"&gt;Ver Pedigree&lt;/v-btn&gt;
+      &lt;/v-form&gt;
     &lt;/v-container&gt;
- 
   &lt;/v-form&gt;
 &lt;/template&gt;
 &nbsp;
 &lt;script&gt;
+export default {
+  data: () =&gt; ({
+    habilitar: true,
+    perro: ""
+  }),
 &nbsp;
-  export default { 
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    data: () =&gt; ({</span></span>
-      habilitar:true,
-        perro: ''
-      
-    }),
-  
-    methods: {
-<span class="fstat-no" title="function not covered" >      handleClick: function(event) {      </span>
+  methods: {
+<span class="fstat-no" title="function not covered" >    handleClick: function(event) {</span>
 <span class="cstat-no" title="statement not covered" >      var valor = this.perro;</span>
-<span class="cstat-no" title="statement not covered" >      console.log(valor)</span>
+<span class="cstat-no" title="statement not covered" >      console.log(valor);</span>
 <span class="cstat-no" title="statement not covered" >      switch (valor) {</span>
         case "cora":
-<span class="cstat-no" title="statement not covered" >          location.href = "https://pedigree.setter-anglais.fr/genealogie/arbre.php?id=11475&amp;fn=pedigree&amp;rq=CORA"; </span>
+<span class="cstat-no" title="statement not covered" >          location.href =</span>
+            "https://pedigree.setter-anglais.fr/genealogie/arbre.php?id=11475&amp;fn=pedigree&amp;rq=CORA";
 <span class="cstat-no" title="statement not covered" >          break;</span>
 &nbsp;
         case "imba":
-<span class="cstat-no" title="statement not covered" >          location.href = "https://pedigree.setter-anglais.fr/genealogie/arbre.php?id=32657"; </span>
+<span class="cstat-no" title="statement not covered" >          location.href =</span>
+            "https://pedigree.setter-anglais.fr/genealogie/arbre.php?id=32657";
 <span class="cstat-no" title="statement not covered" >          break;</span>
-        
+&nbsp;
         case "lula":
-<span class="cstat-no" title="statement not covered" >          location.href = "https://pedigree.setter-anglais.fr/genealogie/arbre.php?id=48852"; </span>
-<span class="cstat-no" title="statement not covered" >          break; </span>
+<span class="cstat-no" title="statement not covered" >          location.href =</span>
+            "https://pedigree.setter-anglais.fr/genealogie/arbre.php?id=48852";
+<span class="cstat-no" title="statement not covered" >          break;</span>
 &nbsp;
         case "lupin":
-<span class="cstat-no" title="statement not covered" >          location.href = "https://pedigree.setter-anglais.fr/genealogie/arbre.php?id=48853&amp;fn=pedigree&amp;rq=LUPIN+DE+LA+BARRERA"; </span>
-<span class="cstat-no" title="statement not covered" >          break; </span>
-        
-        default:
-<span class="cstat-no" title="statement not covered" >        break;</span>
-      }
+<span class="cstat-no" title="statement not covered" >          location.href =</span>
+            "https://pedigree.setter-anglais.fr/genealogie/arbre.php?id=48853&amp;fn=pedigree&amp;rq=LUPIN+DE+LA+BARRERA";
+<span class="cstat-no" title="statement not covered" >          break;</span>
 &nbsp;
-    
-     
+        default:
+<span class="cstat-no" title="statement not covered" >          break;</span>
+      }
     }
   }
-}
+};
 &lt;/script&gt;
 &lt;style scoped&gt;
-  .container {
-    max-width: 1500px;
-    margin:  auto;
-    padding: 15px 30px;
+.container {
+  max-width: 1500px;
+  margin: auto;
+  padding: 15px 30px;
   /*  background-color: rgb(136,126,0);*/
-    font-size: 180%;
-&nbsp;
-  }
+  font-size: 180%;
+}
 &lt;/style&gt;
 &nbsp;
 &nbsp;
@@ -376,7 +334,7 @@
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Oct 09 2019 18:04:40 GMT+0200 (GMT+02:00)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Oct 10 2019 14:17:05 GMT+0200 (GMT+02:00)
 </div>
 </div>
 <script src="../../prettify.js"></script>

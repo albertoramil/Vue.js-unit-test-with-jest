@@ -40,9 +40,12 @@ describe('Counter', () => {
 
 
   it('lanza el mensaje', () => {
+
+
     const button = wrapper.find('buttonResponder')
     button.trigger('click')
     expect(wrapper.vm.respuesta).toBe("tonto")
+
   })
 
 

@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomCard.vue should have a custom title and match snapshot 1`] = `
+<v-card>
+  <v-card-title><span>Foobar</span>
+    <v-spacer></v-spacer>
+    <v-btn>
+      Action
+    </v-btn>
+  </v-card-title>
+  <v-card-text></v-card-text>
+</v-card>
+`;
+
+exports[`verpedigree captura de los elementos html 1`] = `
+<v-form>
+  <v-container>
+    <v-form>
+      <v-text-field rules="function (v) {
+        /* istanbul ignore next */cov_hlhqjoykk.f[5]++;
+        cov_hlhqjoykk.s[26]++;
+        return (/* istanbul ignore next */(cov_hlhqjoykk.b[4][0]++, !!v) || /* istanbul ignore next */(cov_hlhqjoykk.b[4][1]++, '')
+        );
+      }" maxlength="25" hint="Tamaño máximo" label="Introduce el nombre del perro"></v-text-field>
+      <v-btn color="success" class="mr-4">
+        Ver Pedigree
+      </v-btn>
+    </v-form>
+  </v-container>
+</v-form>
+`;
+
+exports[`verpedigree existe el boton y le puedo dar 1`] = `
+<v-form>
+  <v-container>
+    <v-form>
+      <v-text-field rules="function (v) {
+        /* istanbul ignore next */cov_vfbk8k1kf.f[5]++;
+        cov_vfbk8k1kf.s[26]++;
+        return (/* istanbul ignore next */(cov_vfbk8k1kf.b[4][0]++, !!v) || /* istanbul ignore next */(cov_vfbk8k1kf.b[4][1]++, '')
+        );
+      }" maxlength="25" hint="Tamaño máximo" label="Introduce el nombre del perro"></v-text-field>
+      <v-btn color="success" class="mr-4">
+        Ver Pedigree
+      </v-btn>
+    </v-form>
+  </v-container>
+</v-form>
+`;
