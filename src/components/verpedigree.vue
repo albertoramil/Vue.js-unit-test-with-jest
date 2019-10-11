@@ -5,17 +5,31 @@
 
     <v-text-field type="input" data-test="zipCodeText" v-model="inputText"></v-text-field>
 
-      <v-text-field type="input" :rules="[v => !!v || '']"
-          maxlength="25"
-          hint="Tamaño máximo"
-           data-test="entradaperro" v-model="perro"></v-text-field>
+<!--
+    <v-text-field
+      v-model="email"
+      :rules="emailRules"
+      label=" label=LABEL"
+      required
+    ></v-text-field>-->
 
 
-
-
+    <v-text-field
+      type="input"
+      :rules="[v => !!v || '']"
+      maxlength="25"
+      hint="Tamaño máximo"
+      data-test="entradaperro"
+      v-model="perro"
+    ></v-text-field>
 
     <v-btn v-on:click="save" data-test="saveButton" color="primary">Enter</v-btn>
-        <v-btn  color="success" data-test="handleClickButton" class="mr-4" @click="handleClick">Ver Pedigree</v-btn>
+    <v-btn
+      color="success"
+      data-test="handleClickButton"
+      class="mr-4"
+      @click="handleClick"
+    >Ver Pedigree</v-btn>
 
     <br />
   </div>
@@ -30,7 +44,11 @@ export default {
   },
   data() {
     return {
-      inputText: "",perro:""
+      inputText: "",
+      perro: "",
+      url:"",
+      count: 0,
+
     };
   },
   methods: {
@@ -38,28 +56,36 @@ export default {
       this.$emit("save", this.inputText);
       this.inputText = "";
     },
- handleClick: function(event) {
-        var valor = this.perro;
+    increment () {
+      this.count++
+    },
+    handleClick() {
+      var valor = this.perro;
       console.log(valor);
+
+
       switch (valor) {
-        case "cora":
-          location.href =
-            "https://pedigree.setter-anglais.fr/genealogie/arbre.php?id=11475&fn=pedigree&rq=CORA";
+        case "cora": 
+                    this.count++
+
+          location.href ="https://pedigree.setter-anglais.fr/genealogie/arbre.php?id=11475&fn=pedigree&rq=CORA";
+                this.url="https://pedigree.setter-anglais.fr/genealogie/arbre.php?id=11475&fn=pedigree&rq=CORA"
+
           break;
 
         case "imba":
-          location.href =
-            "https://pedigree.setter-anglais.fr/genealogie/arbre.php?id=32657";
+          location.href ="https://pedigree.setter-anglais.fr/genealogie/arbre.php?id=32657";
+          url=location.href
           break;
 
         case "lula":
-          location.href =
-            "https://pedigree.setter-anglais.fr/genealogie/arbre.php?id=48852";
+          location.href ="https://pedigree.setter-anglais.fr/genealogie/arbre.php?id=48852";
+          url=location.href
           break;
 
         case "lupin":
-          location.href =
-            "https://pedigree.setter-anglais.fr/genealogie/arbre.php?id=48853&fn=pedigree&rq=LUPIN+DE+LA+BARRERA";
+          location.href ="https://pedigree.setter-anglais.fr/genealogie/arbre.php?id=48853&fn=pedigree&rq=LUPIN+DE+LA+BARRERA";
+          url=location.href
           break;
 
         default:

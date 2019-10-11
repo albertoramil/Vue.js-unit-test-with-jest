@@ -7,7 +7,6 @@
         >
           Carga
         </v-btn>
-
   <v-card>
     <v-card-title>
       Albunes
@@ -19,7 +18,7 @@
     </v-card-title>
     <v-data-table
       :headers="cabecera2"
-      :items="ausers"
+      :items="info"
       :search="search"
     ></v-data-table>
   </v-card>
@@ -50,7 +49,6 @@ export default {
         { text: 'Título', value: 'title' },
         { text: 'url', value: 'url' },
         { text: 'album', value: 'albumId' },
-
         ]
     }
   }, mounted () {

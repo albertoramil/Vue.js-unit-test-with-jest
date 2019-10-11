@@ -30,7 +30,7 @@ describe('verpedigree', () => {
   })
 
 
-  
+
 
   it('Enter text and check the value of inputText', ()=>{
     var textInput = wrapper.find('[data-test="zipCodeText"]')
@@ -51,5 +51,35 @@ describe('verpedigree', () => {
     wrapper.vm.$emit('save', "84102");
     expect(wrapper.emitted().save).toBeTruthy()
   })
+
+
+  it('Enter text and check the value of inputText', ()=>{
+    var textInput = wrapper.find('[data-test="entradaperro"]')
+    textInput.setValue('cora');
+    expect(wrapper.vm.perro).toBe('cora')
+
+   
+
+  })
+  
+
+  it('esperamos un 0 al no ser un caso del case', () => {
+    var textInput = wrapper.find('[data-test="entradaperro"]')
+    textInput.setValue('coraaaa');
+    const button = wrapper.find('[data-test="handleClickButton"]')
+    button.trigger('click')
+    expect(wrapper.vm.count).toBe(0)
+  })
+
+
+  it('esperamos la url del perro introducido', () => {
+    var textInput = wrapper.find('[data-test="entradaperro"]')
+    textInput.setValue('cora');
+    const button = wrapper.find('[data-test="handleClickButton"]')
+    button.trigger('click')
+    expect(wrapper.vm.url).toBe("https://pedigree.setter-anglais.fr/genealogie/arbre.php?id=11475&fn=pedigree&rq=CORA")
+  })
+
+
 
 });
