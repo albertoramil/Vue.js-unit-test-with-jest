@@ -6,28 +6,28 @@ describe('DisplayTemperature', () => {
   let wrapper;
   let city = "Salt Lake City"
   let fahrenheitTemperature = 39
-  beforeEach(()=>{
+  beforeEach(() => {
     const localVue = createLocalVue()
     localVue.use(vuetify)
 
     wrapper = shallowMount(DisplayTemperature, {
       localVue,
-      propsData:{
+      propsData: {
         city,
         fahrenheitTemperature
       }
     })
   })
 
-  it('has a alert element', ()=>{
+  it('has a alert element', () => {
     expect(wrapper.contains('[data-test="alertElement"]')).toBe(true)
   })
 
-  it('check props', ()=>{
+  it('check props', () => {
     expect(wrapper.vm.city).toBe('Salt Lake City')
   })
 
-  it('check the output', ()=>{
+  it('check the output', () => {
     expect(wrapper.text()).toMatch(`The current temperature in ${city} is ${fahrenheitTemperature} F.`)
   })
 

@@ -4,7 +4,7 @@ import vuetify from "vuetify"
 
 describe('verpedigree', () => {
   let wrapper;
-  beforeEach(()=>{
+  beforeEach(() => {
     const localVue = createLocalVue()
     localVue.use(vuetify)
 
@@ -13,55 +13,22 @@ describe('verpedigree', () => {
     })
   })
 
-  it('Find input- type text ', ()=>{
-    expect(wrapper.contains('[data-test="zipCodeText"]')).toBe(true)
-  })
-  it('Find input- type text ', ()=>{
+  it('Find input- type text ', () => {
     expect(wrapper.contains('[data-test="entradaperro"]')).toBe(true)
   })
 
 
-  it('has a button', ()=>{
-    expect(wrapper.contains('[data-test="saveButton"]')).toBe(true)
-  })
-
-  it('has a button', ()=>{
+  it('has a button', () => {
     expect(wrapper.contains('[data-test="handleClickButton"]')).toBe(true)
   })
 
 
-
-
-  it('Enter text and check the value of inputText', ()=>{
-    var textInput = wrapper.find('[data-test="zipCodeText"]')
-    textInput.setValue('84102');
-    expect(wrapper.vm.inputText).toBe('84102')
-  })
-
-
-  it('click enter button and clear input', ()=>{
-    wrapper.find('[data-test="saveButton"]').trigger("click");
-    var textInput = wrapper.find('[data-test="zipCodeText"]')
-    expect(textInput.text()).toMatch('')
-    expect(wrapper.vm.inputText).toBe('')
-  })
-
-
-  it('Check emitted "save" event', ()=>{
-    wrapper.vm.$emit('save', "84102");
-    expect(wrapper.emitted().save).toBeTruthy()
-  })
-
-
-  it('Enter text and check the value of inputText', ()=>{
+  it('Enter text and check the value of inputText', () => {
     var textInput = wrapper.find('[data-test="entradaperro"]')
     textInput.setValue('cora');
     expect(wrapper.vm.perro).toBe('cora')
-
-   
-
   })
-  
+
 
   it('esperamos un 0 al no ser un caso del case', () => {
     var textInput = wrapper.find('[data-test="entradaperro"]')
@@ -79,7 +46,5 @@ describe('verpedigree', () => {
     button.trigger('click')
     expect(wrapper.vm.url).toBe("https://pedigree.setter-anglais.fr/genealogie/arbre.php?id=11475&fn=pedigree&rq=CORA")
   })
-
-
 
 });

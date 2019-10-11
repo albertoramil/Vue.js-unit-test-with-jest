@@ -60,6 +60,7 @@ it("Check city name from the respponse", (done)=>{
       json: () => Promise.resolve(fakeData)
     })
   }
+  
   model.fetchResponse(fakeFetch, "84102")
     .then(result => {
       expect(result.name).toBe("Salt Lake City")

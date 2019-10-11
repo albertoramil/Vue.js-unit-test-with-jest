@@ -22,7 +22,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/51</span>
+        <span class='fraction'>0/52</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/51</span>
+        <span class='fraction'>0/52</span>
       </div>
     </div>
   </div>
@@ -151,12 +151,7 @@
 106
 107
 108
-109
-110
-111
-112</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+109</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -166,7 +161,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -245,6 +239,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -253,9 +249,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -267,122 +261,119 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
 &lt;template&gt;
-    &lt;v-btn  large fab  v-on:click="anadir"&gt;
-    {{operacionEntrada}}
-  &lt;/v-btn&gt;
+  &lt;v-btn large fab v-on:click="anadir"&gt;{{operacionEntrada}}&lt;/v-btn&gt;
 &lt;/template&gt;
 &nbsp;
 &nbsp;
 &nbsp;
 &lt;script&gt;
-  export default {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    data: () =&gt; ({</span></span>
-    }),
-    methods: {
-        anadir(event){
-<span class="cstat-no" title="statement not covered" >        console.log(this.operacionEntrada)</span>
-        var valor
-<span class="cstat-no" title="statement not covered" >        valor=this.operacionEntrada</span>
-<span class="cstat-no" title="statement not covered" >switch (valor) {</span>
+export default {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  data: () =&gt; ({}),</span></span>
+  methods: {
+    anadir(event) {
+<span class="cstat-no" title="statement not covered" >      console.log(this.operacionEntrada);</span>
+      var valor;
+<span class="cstat-no" title="statement not covered" >      valor = this.operacionEntrada;</span>
+<span class="cstat-no" title="statement not covered" >      switch (valor) {</span>
         case "/":
-<span class="cstat-no" title="statement not covered" >        console.log("div")</span>
+<span class="cstat-no" title="statement not covered" >          console.log("div");</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            if (this.$store.getters.gettercera=="") {</span>
-<span class="cstat-no" title="statement not covered" >            this.$store.commit('SET_TERCERA', this.operacionEntrada)	</span>
-            }
+<span class="cstat-no" title="statement not covered" >          if (this.$store.getters.gettercera == "") {</span>
+<span class="cstat-no" title="statement not covered" >            this.$store.commit("SET_TERCERA", this.operacionEntrada);</span>
+          }
 <span class="cstat-no" title="statement not covered" >          break;</span>
 &nbsp;
         case "*":
-<span class="cstat-no" title="statement not covered" >          if (this.$store.getters.gettercera=="") {</span>
-<span class="cstat-no" title="statement not covered" >            this.$store.commit('SET_TERCERA', this.operacionEntrada)	</span>
-            }
-<span class="cstat-no" title="statement not covered" >        console.log("multi")</span>
+<span class="cstat-no" title="statement not covered" >          if (this.$store.getters.gettercera == "") {</span>
+<span class="cstat-no" title="statement not covered" >            this.$store.commit("SET_TERCERA", this.operacionEntrada);</span>
+          }
+<span class="cstat-no" title="statement not covered" >          console.log("multi");</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
-        
+&nbsp;
         case "-":
-<span class="cstat-no" title="statement not covered" >          if (this.$store.getters.gettercera=="") {</span>
-<span class="cstat-no" title="statement not covered" >            this.$store.commit('SET_TERCERA', this.operacionEntrada)	</span>
-            }
-<span class="cstat-no" title="statement not covered" >        console.log("resta")</span>
-<span class="cstat-no" title="statement not covered" >          break; </span>
+<span class="cstat-no" title="statement not covered" >          if (this.$store.getters.gettercera == "") {</span>
+<span class="cstat-no" title="statement not covered" >            this.$store.commit("SET_TERCERA", this.operacionEntrada);</span>
+          }
+<span class="cstat-no" title="statement not covered" >          console.log("resta");</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
 &nbsp;
         case "+":
-<span class="cstat-no" title="statement not covered" >          if (this.$store.getters.gettercera=="") {</span>
-<span class="cstat-no" title="statement not covered" >            this.$store.commit('SET_TERCERA', this.operacionEntrada)	</span>
-            }
-<span class="cstat-no" title="statement not covered" >        console.log("suma")</span>
-<span class="cstat-no" title="statement not covered" >          break; </span>
+<span class="cstat-no" title="statement not covered" >          if (this.$store.getters.gettercera == "") {</span>
+<span class="cstat-no" title="statement not covered" >            this.$store.commit("SET_TERCERA", this.operacionEntrada);</span>
+          }
+<span class="cstat-no" title="statement not covered" >          console.log("suma");</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
 &nbsp;
         case "C":
-<span class="cstat-no" title="statement not covered" >          console.log("C")</span>
-<span class="cstat-no" title="statement not covered" >          this.$store.commit('SET_PRIMERA', "")	</span>
-<span class="cstat-no" title="statement not covered" >          this.$store.commit('SET_SEGUNDA', "")	</span>
-<span class="cstat-no" title="statement not covered" >          this.$store.commit('SET_TERCERA', "")	        </span>
-<span class="cstat-no" title="statement not covered" >          this.$store.commit('SET_RESULTADO', "0.0")	</span>
+<span class="cstat-no" title="statement not covered" >          console.log("C");</span>
+<span class="cstat-no" title="statement not covered" >          this.$store.commit("SET_PRIMERA", "");</span>
+<span class="cstat-no" title="statement not covered" >          this.$store.commit("SET_SEGUNDA", "");</span>
+<span class="cstat-no" title="statement not covered" >          this.$store.commit("SET_TERCERA", "");</span>
+<span class="cstat-no" title="statement not covered" >          this.$store.commit("SET_RESULTADO", "0.0");</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >          console.log( "Op "+ this.$store.getters.gettercera   )</span>
-<span class="cstat-no" title="statement not covered" >          break; </span>
-        
+<span class="cstat-no" title="statement not covered" >          console.log("Op " + this.$store.getters.gettercera);</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
+&nbsp;
         case "=":
-          var primero
-          var segundo
-          var op 
-          var resultado
-<span class="cstat-no" title="statement not covered" >          primero=this.$store.getters.getprimera </span>
-<span class="cstat-no" title="statement not covered" >          segundo =this.$store.getters.getsegunda </span>
-<span class="cstat-no" title="statement not covered" >          op =this.$store.getters.gettercera</span>
+          var primero;
+          var segundo;
+          var op;
+          var resultado;
+<span class="cstat-no" title="statement not covered" >          primero = this.$store.getters.getprimera;</span>
+<span class="cstat-no" title="statement not covered" >          segundo = this.$store.getters.getsegunda;</span>
+<span class="cstat-no" title="statement not covered" >          op = this.$store.getters.gettercera;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            var operacion=op</span>
-<span class="cstat-no" title="statement not covered" >            switch (operacion) {</span>
+<span class="cstat-no" title="statement not covered" >          var operacion = op;</span>
+<span class="cstat-no" title="statement not covered" >          switch (operacion) {</span>
             case "+":
-<span class="cstat-no" title="statement not covered" >              resultado=(parseInt(primero,10))+(parseInt(segundo,10))</span>
-<span class="cstat-no" title="statement not covered" >              console.log(resultado)</span>
-<span class="cstat-no" title="statement not covered" >                        this.$store.commit('SET_RESULTADO', resultado)	</span>
+<span class="cstat-no" title="statement not covered" >              resultado = parseInt(primero, 10) + parseInt(segundo, 10);</span>
+<span class="cstat-no" title="statement not covered" >              console.log(resultado);</span>
+<span class="cstat-no" title="statement not covered" >              this.$store.commit("SET_RESULTADO", resultado);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            break;</span>
+<span class="cstat-no" title="statement not covered" >              break;</span>
             case "-":
-<span class="cstat-no" title="statement not covered" >              resultado=(parseInt(primero,10))-(parseInt(segundo,10))</span>
-<span class="cstat-no" title="statement not covered" >              console.log("resultado es " + resultado)</span>
-<span class="cstat-no" title="statement not covered" >                                      this.$store.commit('SET_RESULTADO', resultado)	</span>
+<span class="cstat-no" title="statement not covered" >              resultado = parseInt(primero, 10) - parseInt(segundo, 10);</span>
+<span class="cstat-no" title="statement not covered" >              console.log("resultado es " + resultado);</span>
+<span class="cstat-no" title="statement not covered" >              this.$store.commit("SET_RESULTADO", resultado);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            break;</span>
+<span class="cstat-no" title="statement not covered" >              break;</span>
             case "*":
-<span class="cstat-no" title="statement not covered" >              resultado=(parseInt(primero,10))*(parseInt(segundo,10))</span>
-<span class="cstat-no" title="statement not covered" >              console.log("resultado es " + resultado)</span>
-<span class="cstat-no" title="statement not covered" >                                      this.$store.commit('SET_RESULTADO', resultado)	</span>
+<span class="cstat-no" title="statement not covered" >              resultado = parseInt(primero, 10) * parseInt(segundo, 10);</span>
+<span class="cstat-no" title="statement not covered" >              console.log("resultado es " + resultado);</span>
+<span class="cstat-no" title="statement not covered" >              this.$store.commit("SET_RESULTADO", resultado);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            break; </span>
+<span class="cstat-no" title="statement not covered" >              break;</span>
             case "/":
-<span class="cstat-no" title="statement not covered" >              resultado=(parseInt(primero,10))/(parseInt(segundo,10))</span>
-<span class="cstat-no" title="statement not covered" >              console.log("resultado es " + resultado)</span>
-<span class="cstat-no" title="statement not covered" >                                      this.$store.commit('SET_RESULTADO', resultado)	</span>
-<span class="cstat-no" title="statement not covered" >            break; </span>
+<span class="cstat-no" title="statement not covered" >              resultado = parseInt(primero, 10) / parseInt(segundo, 10);</span>
+<span class="cstat-no" title="statement not covered" >              console.log("resultado es " + resultado);</span>
+<span class="cstat-no" title="statement not covered" >              resultado = resultado.toFixed(2);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >              this.$store.commit("SET_RESULTADO", resultado);</span>
+<span class="cstat-no" title="statement not covered" >              break;</span>
             default:
-<span class="cstat-no" title="statement not covered" >            break;</span>
-      }
+<span class="cstat-no" title="statement not covered" >              break;</span>
+          }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >          break; </span>
-&nbsp;
+<span class="cstat-no" title="statement not covered" >          break;</span>
 &nbsp;
         default:
-<span class="cstat-no" title="statement not covered" >        break;</span>
-      }
-&nbsp;
-        }
-    },props: {
-      operacionEntrada: { 
-              required: true 
+<span class="cstat-no" title="statement not covered" >          break;</span>
       }
     }
-&nbsp;
+  },
+  props: {
+    operacionEntrada: {
+      required: true
+    }
   }
+};
 &lt;/script&gt;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Oct 11 2019 13:01:28 GMT+0200 (GMT+02:00)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Oct 11 2019 17:13:03 GMT+0200 (GMT+02:00)
 </div>
 </div>
 <script src="../../prettify.js"></script>
