@@ -1,21 +1,24 @@
 <template>
   <v-content>
     <Main></Main>
-        <div class="container">
-
-    <h1>carruajes shopping</h1>
-    <ul class="list-group">
-      <carruajeC
-        v-for="(carruaje, index) in carruajes"
-        :key="index"
-        :carruaje="carruaje"
-        :current="actual"
-        @select="updateChariot"
-      ></carruajeC>
-    </ul>
-    <pre>{{ $data }}</pre>
-        </div>
-
+    <div class="container">
+      <link
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        rel="stylesheet"
+      />
+      <title>Horse-drawn Chariots</title>
+      <h1>carruajes shopping</h1>
+      <ul class="list-group">
+        <carruajeC
+          v-for="(carruaje, index) in carruajes"
+          :key="index"
+          :carruaje="carruaje"
+          :current="actual"
+          @selectPadre="updateChariot"
+        ></carruajeC>
+      </ul>
+      <pre>{{ $data }}</pre>
+    </div>
   </v-content>
 </template>
 

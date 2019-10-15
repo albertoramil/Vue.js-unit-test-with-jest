@@ -14,12 +14,21 @@
 
 <script>
 export default {
-  data: () => ({}),
+  data () {
+    return {
+      primera: '',
+          
+
+
+    }
+  },
   methods: {
     anadir() {
       console.log(this.numeroEntrada);
       if (this.$store.getters.getprimera == "") {
         this.$store.commit("SET_PRIMERA", this.numeroEntrada);
+        this.primera=this.$store.getters.getprimera
+        
       } else {
         this.$store.commit("SET_SEGUNDA", this.numeroEntrada);
       }
@@ -29,6 +38,11 @@ export default {
           " 2º numero " +
           this.$store.getters.getsegunda
       );
+    }
+  },
+    watch: {
+    primera: function() {
+      console.log("cambiooooooooooooooooooooooooooooooooooooooooooooooooooooooo watch")
     }
   },
   props: {

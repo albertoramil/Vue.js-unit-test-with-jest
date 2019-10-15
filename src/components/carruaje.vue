@@ -2,7 +2,8 @@
   <li class="list-group-item">
     <h4>
       {{ carruaje.nombre }} carruaje tiene
-      <strong>{{ carruaje.caballos }}</strong> caballos(s)!{{current}}{{carruaje}}
+      <strong>{{ carruaje.caballos }}</strong>
+      caballos(s)!{{current}}{{carruaje}}
     </h4>
 
     <button @click="MontaEste(carruaje)" class="btn btn-primary" :disabled="isCurrent">{{ accion }}</button>
@@ -15,17 +16,19 @@
 export default {
   data: () => ({}),
   props: {
-    carruaje: {},//anterior
-    current: {}// actual
+    carruaje: {}, //es el de la
+    current: {} // actual
   },
   methods: {
     MontaEste: function(carruaje) {
-      this.$emit("select", carruaje);
+      this.$emit("selectPadre", carruaje);
     }
   },
   computed: {
     //verdadero si necesitas mas caballos
     hasMoreHorses: function() {
+
+
       return this.current.caballos < this.carruaje.caballos;
     },
     //el que vas montar
