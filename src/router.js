@@ -10,6 +10,9 @@ import Relacionadas from './views/Relacionadas.vue'
 import Calculadora from './views/Calculadora.vue'
 import VistaBotonesCalculadora from './views/VistaBotonesCalculadora.vue'
 import Soluciones from './views/SolucionesV.vue'
+import Vcarruaje from './views/Vcarruaje.vue'
+
+
 
 import DataTableV from './views/DataTableV.vue'
 import mapV from './views/mapV.vue'
@@ -60,6 +63,10 @@ export default new Router({
       path: '/mapV',
       name: 'mapV',
       component: mapV
+    },{
+      path: '/Vcarruaje',
+      name: 'Vcarruaje',
+      component: Vcarruaje
     },
   ]
 
