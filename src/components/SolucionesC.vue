@@ -85,16 +85,45 @@ export default {
     max-width="344"
     esto es para el tamaño del card
       >-->
+
       <v-card>
         <v-card-text>
           <p class="display-1 text--primary">{{"Titulo: "}}{{album.title}}</p>
           <div class="text--primary">
             {{"Url: "}}{{album.url}}
-            <br />{{"ThumbnailUrl: " }}{{album.thumbnailUrl}}
+            <br />
+            {{"ThumbnailUrl: " }}{{album.thumbnailUrl}}
           </div>
         </v-card-text>
       </v-card>
     </template>
+    <v-btn color="indigo" class="white--text" @click="consultaUsers">Carga usuarios</v-btn>
+
+    <ul class="list-group">
+      <!-- render filtered array items using 'v-for' -->
+      <li v-for="(user, index) in users" :key="index" class="list-group-item">
+        {{"Nombre "}} {{user.name}}
+        {{"Apellidos "}}{{user.username}}
+        {{"Email "}}{{user.email}}
+        {{"Direccion "}} {{user.address.street}}
+      </li>
+    </ul>
+
+    <ul class="list-group">
+      <!-- render filtered array items using 'v-for' -->
+      <li v-for="(user, index) in users" :key="index" class="list-group-item">
+        <v-card>
+          <v-card-text>
+            <p class="display-1 text--primary"> {{user.name}}</p>
+            <div class="text--primary">
+              {{"Apellidos "}}{{user.username}}
+              <br />
+              {{"Email "}}{{user.email}}
+            </div>
+          </v-card-text>
+        </v-card>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -109,6 +138,7 @@ export default {
       info: [],
       status: "",
       album: "",
+      users: [],
 
       cabecera2: [
         {
@@ -142,6 +172,15 @@ export default {
         let respuesta = await this.$axios.get(baseURI);
         var albumConcreto = respuesta.data[5];
         this.album = albumConcreto;
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    async consultaUsers() {
+      try {
+        const baseURI = "https://jsonplaceholder.typicode.com/users";
+        let respuesta = await this.$axios.get(baseURI);
+        this.users = respuesta.data;
       } catch (error) {
         console.log(error);
       }
