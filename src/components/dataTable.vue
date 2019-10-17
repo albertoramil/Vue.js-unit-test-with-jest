@@ -13,8 +13,6 @@
 </template>
 
 
-
-
 <script>
 export default {
   name: "app",
@@ -37,7 +35,6 @@ export default {
     };
   },
   mounted() {
-    console.log("entra en el mounted");
     this.$axios
       .get("https://jsonplaceholder.typicode.com/photos")
       .then(response => (this.info = response.data));
@@ -50,9 +47,7 @@ export default {
         let respuesta = await this.$axios.get(baseURI);
         this.ausers = respuesta.data;
       } catch (error) {
-        console.log("error");
         console.log(error);
-        console.log("error");
       }
     }
   }

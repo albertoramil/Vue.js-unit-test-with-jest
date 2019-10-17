@@ -23,6 +23,8 @@
           <td>{{ props.item.title }}</td>
           <td>{{ props.item.url }}</td>
           <td>{{ props.item.albumId }}</td>
+              <v-btn color="indigo" class="white--text" @click="consultaUsers">Ver(sin codigo)</v-btn>
+
         </template>
       </v-data-table>
 
@@ -34,6 +36,7 @@
       >Buscar usuarios</v-btn>
       <br />
       <v-text-field
+      v-show="verDataTable"
         v-model="userBuscado"
         :rules="nameRules"
         :counter="10"
