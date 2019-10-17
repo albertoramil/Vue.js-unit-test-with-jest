@@ -13,6 +13,7 @@
     ></v-text-field>
 
     <v-btn
+    v-show="canBeVisited"
       color="success"
       data-test="handleClickButton"
       class="mr-4"
@@ -32,16 +33,23 @@ export default {
   },
   data() {
     return {
-      inputText: "",
       perro: "",
       url: "",
-      count: 0
+      count: 0,
+      esVacio:0,
     };
+  },  computed: {
+    //con esto simulamos el true o false para mostrarlo,
+    //cuando es mayoy que 3 ya no la cumple y el boton de visit se oculta
+    // lo podemos usar para otra cosas como un login vacio,
+    // de modo que se recalculo solo al estar en la parte computed y no method
+    canBeVisited: function() {
+      return this.perro!=="";
+    },
+   
   },
   methods: {
     save() {
-      this.$emit("save", this.inputText);
-      this.inputText = "";
     },
     increment() {
       this.count++;

@@ -4,17 +4,21 @@
     <v-card>
       <v-btn color="indigo" class="white--text" @click="aconsulta">Carga Todo</v-btn>
 
-      <v-card-title>
+      <v-card-title v-show="verDataTable">
         Albunes
         <br />
         <br />
         <br />
         <br />
 
-        <v-text-field v-model="search" label="   Busqueda por cualquier campo"></v-text-field>
+        <v-text-field
+          v-show="verDataTable"
+          v-model="search"
+          label="   Busqueda por cualquier campo"
+        ></v-text-field>
       </v-card-title>
 
-      <v-data-table :headers="cabecera2" :items="info" :search="search">
+      <v-data-table v-show="verDataTable" :headers="cabecera2" :items="info" :search="search">
         <template v-slot:items="props">
           <td>{{ props.item.title }}</td>
           <td>{{ props.item.url }}</td>
@@ -22,7 +26,12 @@
         </template>
       </v-data-table>
 
-      <v-btn color="indigo" class="white--text" @click="buscarUnAlbum">Buscar usuarios</v-btn>
+      <v-btn
+        v-show="canBeVisited"
+        color="indigo"
+        class="white--text"
+        @click="buscarUnAlbum"
+      >Buscar usuarios</v-btn>
       <br />
       <v-text-field
         v-model="userBuscado"
@@ -117,7 +126,8 @@ export default {
     return {
       search: "",
       info: [],
-      infoo: "",
+      infoLongitud: 0,
+      usersLongitud: 0,
 
       status: "",
       album: "",
@@ -142,6 +152,18 @@ export default {
       ]
     };
   },
+  computed: {
+    //con esto simulamos el true o false para mostrarlo,
+    //cuando es mayoy que 3 ya no la cumple y el boton de visit se oculta
+    // lo podemos usar para otra cosas como un login vacio,
+    // de modo que se recalculo solo al estar en la parte computed y no method
+    canBeVisited: function() {
+      return this.usersLongitud > 0;
+    },
+    verDataTable: function() {
+      return this.infoLongitud > 0;
+    }
+  },
   methods: {
     async aconsulta() {
       try {
@@ -149,6 +171,8 @@ export default {
         let respuesta = await this.$axios.get(baseURI);
         this.info = respuesta.data;
         this.status = respuesta.status;
+        this.infoLongitud = this.info.length;
+
         console.log(respuesta.status);
       } catch (error) {
         console.log("error");
@@ -171,14 +195,15 @@ export default {
         const baseURI = "https://jsonplaceholder.typicode.com/users";
         let respuesta = await this.$axios.get(baseURI);
         this.users = respuesta.data;
+        this.usersLongitud = this.users.length;
       } catch (error) {
         console.log(error);
       }
     },
     buscarUnAlbum() {
+      this.consultaUsers;
       this.usuariosBuscados = [];
       var usuarios = this.users;
-      console.log(this.userBuscado);
       for (let i = 0; i < usuarios.length; i++) {
         var usuario = usuarios[i];
         var username = usuario.name;
@@ -187,16 +212,12 @@ export default {
         }
       }
       this.usuariosBuscadosLongitud = this.usuariosBuscados.length;
-            console.log(this.usuariosBuscadosLongitud);
 
       if (this.usuariosBuscadosLongitud > 0) {
         this.usuariosBuscadosLongitud = 0;
-      }else{
-                this.usuariosBuscadosLongitud = 1;
-
+      } else {
+        this.usuariosBuscadosLongitud = 1;
       }
-                  console.log(this.usuariosBuscadosLongitud);
-
     }
   }
 };
