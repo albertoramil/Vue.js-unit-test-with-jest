@@ -1,59 +1,4 @@
-<!--<template >
-  <div>
-      <template>
-        <v-data-table
-          :headers="cabecera2"
-          :items="info"
-          :items-per-page="5"
-          class="elevation-1"
-        ></v-data-table>
-      </template>
-  </div>
-</template>
 
-<script>
-export default {
-  name: 'app',
-  data () {
-    return {
-      info:[],albumid:'',    
-      cabecera2: [
-          {
-            text: 'Caralladas',
-            align: 'left',
-            sortable: false,
-            value: 'name',
-          },
-          { text: 'Título', value: 'title' },
-          { text: 'url', value: 'url' },
-          { text: 'album', value: 'albumId' },
-        ]
-    }
-  }, mounted () {
-    console.log ("entra en el mounted")
-    this.$axios
-      .get('https://jsonplaceholder.typicode.com/photos')
-      .then(response => (this.info = response.data))
-  },
-  
-
-  methods: {
-     
-     async aconsulta() {
-      try {
-        const baseURI = 'https://jsonplaceholder.typicode.com/photos'
-        let respuesta=await this.$axios.get(baseURI)
-        this.ausers=respuesta
-      } catch (error) {
-        console.log("error")
-        console.log(error)
-        console.log("error")
-      }  
-    },
-  }
-}
-</script>-->
-  
 <template>
   <div>
     <v-card>
@@ -76,6 +21,38 @@ export default {
           <td>{{ props.item.albumId }}</td>
         </template>
       </v-data-table>
+
+      <v-btn color="indigo" class="white--text" @click="buscarUnAlbum">Buscar usuarios</v-btn>
+      <br />
+      <v-text-field
+        v-model="userBuscado"
+        :rules="nameRules"
+        :counter="10"
+        label="Album buscado"
+        required
+      ></v-text-field>
+      <ul class="list-group">
+        <!-- render filtered array items using 'v-for' -->
+        <h3 v-if="usuariosBuscadosLongitud">{{"No existe coincidencia"}}</h3>
+
+        <li v-else v-for="(user, index) in usuariosBuscados" :key="index" class="list-group-item">
+          <v-card max-width="344">
+            <v-card-text>
+              <p class="display-1 text--primary">{{user.name}}</p>
+              <div class="text--primary">
+                {{"Apellidos "}}{{user.username}}
+                <br />
+                {{"Email "}}{{user.email}}
+              </div>
+            </v-card-text>
+          </v-card>
+          <br />
+          <br />
+          <br />
+        </li>
+      </ul>
+      <br />
+
       <v-btn color="indigo" class="white--text" @click="consultaUnAlbum">Carga un album</v-btn>
       <br />
     </v-card>
@@ -112,9 +89,9 @@ export default {
     <ul class="list-group">
       <!-- render filtered array items using 'v-for' -->
       <li v-for="(user, index) in users" :key="index" class="list-group-item">
-        <v-card>
+        <v-card max-width="344">
           <v-card-text>
-            <p class="display-1 text--primary"> {{user.name}}</p>
+            <p class="display-1 text--primary">{{user.name}}</p>
             <div class="text--primary">
               {{"Apellidos "}}{{user.username}}
               <br />
@@ -122,6 +99,9 @@ export default {
             </div>
           </v-card-text>
         </v-card>
+        <br />
+        <br />
+        <br />
       </li>
     </ul>
   </div>
@@ -131,14 +111,24 @@ export default {
    
 
 <script>
+import { ifError } from "assert";
 export default {
   data() {
     return {
       search: "",
       info: [],
+      infoo: "",
+
       status: "",
       album: "",
       users: [],
+      userBuscado: "",
+      usuariosBuscados: [],
+      usuariosBuscadosLongitud: "",
+      nameRules: [
+        v => !!v || "Obligatorio",
+        v => v.length <= 10 || "tasss pasao"
+      ],
 
       cabecera2: [
         {
@@ -184,6 +174,29 @@ export default {
       } catch (error) {
         console.log(error);
       }
+    },
+    buscarUnAlbum() {
+      this.usuariosBuscados = [];
+      var usuarios = this.users;
+      console.log(this.userBuscado);
+      for (let i = 0; i < usuarios.length; i++) {
+        var usuario = usuarios[i];
+        var username = usuario.name;
+        if (username.includes(this.userBuscado)) {
+          this.usuariosBuscados.push(usuario);
+        }
+      }
+      this.usuariosBuscadosLongitud = this.usuariosBuscados.length;
+            console.log(this.usuariosBuscadosLongitud);
+
+      if (this.usuariosBuscadosLongitud > 0) {
+        this.usuariosBuscadosLongitud = 0;
+      }else{
+                this.usuariosBuscadosLongitud = 1;
+
+      }
+                  console.log(this.usuariosBuscadosLongitud);
+
     }
   }
 };
