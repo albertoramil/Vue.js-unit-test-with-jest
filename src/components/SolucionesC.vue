@@ -222,6 +222,7 @@ export default {
         this.usuariosBuscadosLongitud = 1;
       }
     }
+ 
   }
 };
 </script>

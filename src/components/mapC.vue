@@ -2,19 +2,15 @@
   <div>
     <div>
       <h2>Search and add a pin</h2>
-      <label>
-        
-        <button @click="addMarker">Añadir marker</button>
-      </label>
-      <br/>
 
+      <label>
+        <button @click="mapsVer">Añadir marker</button>
+        {{maps}}
+      </label>
+      <br />
     </div>
-    <br>
-    <gmap-map
-      :center="center"
-      :zoom="12"
-      style="width:100%;  height: 700px;"
-    >
+    <br />
+    <gmap-map :center="center" :zoom="12" style="width:100%;  height: 700px;">
       <gmap-marker
         :key="index"
         v-for="(m, index) in markers"
@@ -35,7 +31,8 @@ export default {
       center: { lat: 45.508, lng: -73.587 },
       markers: [],
       places: [],
-      currentPlace: null
+      currentPlace: null,
+      maps: ""
     };
   },
 
@@ -50,20 +47,47 @@ export default {
       this.currentPlace = place;
     },
     addMarker() {
-        var milatitud=0
-        var milongitud=0
-        navigator.geolocation.getCurrentPosition(position => {
-            milatitud=position.coords.latitude
-            milongitud=position.coords.longitude
-            const marker = {
-                lat: milatitud,
-                lng: milongitud
-            };
-            this.markers.push({ position: marker });
-            this.places.push(this.currentPlace);
-            this.center = marker;
-            this.currentPlace = null; 
-        });     
+      var milatitud = 0;
+      var milongitud = 0;
+      navigator.geolocation.getCurrentPosition(position => {
+        milatitud = position.coords.latitude;
+        milongitud = position.coords.longitude;
+        const marker = {
+          lat: milatitud,
+          lng: milongitud
+        };
+        this.markers.push({ position: marker });
+        this.places.push(this.currentPlace);
+        this.center = marker;
+        this.currentPlace = null;
+      });
+    },
+    async mapsVer() {
+      try {
+        const baseURI =
+          "https://maps.googleapis.com/maps/api/geocode/json?address=lodeiro+viveiro+&key=AIzaSyB-0SUyRksj2aPf0oK5yG59Uw2-q4aHDRU";
+        let respuesta = await this.$axios.get(baseURI);
+        this.maps = respuesta.data.results[0].geometry.location;
+        const json = this.maps;
+        var milatitud = 0;
+        var milongitud = 0;
+        milatitud = json.lat;
+
+        milongitud = json.lng;
+        console.logmilatitud;
+        console.logmilongitud;
+
+        const marker = {
+          lat: milatitud,
+          lng: milongitud
+        };
+        this.markers.push({ position: marker });
+        this.places.push(this.currentPlace);
+        this.center = marker;
+        this.currentPlace = null;
+      } catch (error) {
+        console.log(error);
+      }
     },
     geolocate: function() {
       navigator.geolocation.getCurrentPosition(position => {
