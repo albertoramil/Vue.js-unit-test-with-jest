@@ -1,21 +1,50 @@
 <template>
   <div>
     <div>
-      <h2>Search and add a pin</h2>
-
       <label>
-        <button @click="mapsVer">Añadir marker</button>
+        <v-btn color="success" class="mr-4" @click="mapsVer">Situa</v-btn>
         {{maps}}
       </label>
       <br />
     </div>
     <br />
+    <v-text-field
+      type="input"
+      :rules="[v => !!v || '']"
+      maxlength="25"
+      hint="Tamaño máximo"
+      data-test="entradapoblacion"
+      v-model="poblacion"
+      label="Poblacion"
+    ></v-text-field>
+    <v-text-field
+      type="input"
+      :rules="[v => !!v || '']"
+      maxlength="25"
+      hint="Tamaño máximo"
+      data-test="entradacalle"
+      v-model="calle"
+      label="Calle"
+    ></v-text-field>
+
+    <v-text-field
+      type="input"
+      :rules="[v => !!v || '']"
+      maxlength="25"
+      hint="Tamaño máximo"
+      data-test="entradanumero"
+      v-model="numero"
+      label="Número"
+    ></v-text-field>
+
     <gmap-map :center="center" :zoom="12" style="width:100%;  height: 700px;">
       <gmap-marker
         :key="index"
         v-for="(m, index) in markers"
         :position="m.position"
         @click="center=m.position"
+        :title="m.title"
+        icon=m.image
       ></gmap-marker>
     </gmap-map>
   </div>
@@ -32,7 +61,10 @@ export default {
       markers: [],
       places: [],
       currentPlace: null,
-      maps: ""
+      maps: "",
+      calle: "",
+      numero: "",
+      poblacion: ""
     };
   },
 
@@ -46,26 +78,17 @@ export default {
     setPlace(place) {
       this.currentPlace = place;
     },
-    addMarker() {
-      var milatitud = 0;
-      var milongitud = 0;
-      navigator.geolocation.getCurrentPosition(position => {
-        milatitud = position.coords.latitude;
-        milongitud = position.coords.longitude;
-        const marker = {
-          lat: milatitud,
-          lng: milongitud
-        };
-        this.markers.push({ position: marker });
-        this.places.push(this.currentPlace);
-        this.center = marker;
-        this.currentPlace = null;
-      });
-    },
+
     async mapsVer() {
       try {
         const baseURI =
-          "https://maps.googleapis.com/maps/api/geocode/json?address=lodeiro+viveiro+&key=AIzaSyB-0SUyRksj2aPf0oK5yG59Uw2-q4aHDRU";
+          "https://maps.googleapis.com/maps/api/geocode/json?address=" +
+          this.calle +
+          "+" +
+          this.numero +
+          ",+" +
+          this.poblacion +
+          "+&key=AIzaSyB-0SUyRksj2aPf0oK5yG59Uw2-q4aHDRU";
         let respuesta = await this.$axios.get(baseURI);
         this.maps = respuesta.data.results[0].geometry.location;
         const json = this.maps;
@@ -74,17 +97,26 @@ export default {
         milatitud = json.lat;
 
         milongitud = json.lng;
-        console.logmilatitud;
-        console.logmilongitud;
 
         const marker = {
           lat: milatitud,
-          lng: milongitud
+          lng: milongitud,
         };
-        this.markers.push({ position: marker });
+
+        this.markers = [];
+        var image =
+          "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
+
+        this.markers.push({
+          position: marker,
+          title:"Clienteeee",
+          image:image
+                  });
         this.places.push(this.currentPlace);
         this.center = marker;
         this.currentPlace = null;
+
+        //{ "lat": 43.6642649, "lng": -7.594534800000001 }
       } catch (error) {
         console.log(error);
       }
