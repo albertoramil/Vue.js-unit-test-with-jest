@@ -44,7 +44,6 @@
         :position="m.position"
         @click="center=m.position"
         :title="m.title"
-        icon=m.image
       ></gmap-marker>
     </gmap-map>
   </div>

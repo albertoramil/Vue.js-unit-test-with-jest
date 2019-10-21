@@ -55,38 +55,39 @@
           break;
 
           case "Camadas":
-            this.$router.push("/camadas")
+            this.$router.push("/camadas").catch(err => {})
+
           break;
         
           case "Otras":
-            this.$router.push("/relacionadas")
+            this.$router.push("/relacionadas").catch(err => {})
           break; 
 
           case "Futuras":
-            this.$router.push("/futuras")
+            this.$router.push("/futuras").catch(err => {})
           break; 
 
           case "Calculadora":
-            this.$router.push("/calculadora")
+            this.$router.push("/calculadora").catch(err => {})
           break; 
 
           case "VistaBotonesCalculadora":
-          this.$router.push("/VistaBotonesCalculadora")
+          this.$router.push("/VistaBotonesCalculadora").catch(err => {})
           break; 
         
           case "PEÑA":
-            this.$router.push("/Soluciones")
+            this.$router.push("/Soluciones").catch(err => {})
           break;
           case "DataTableV":
-            this.$router.push("/DataTableV")
+            this.$router.push("/DataTableV").catch(err => {})
           break;
 
           case "mapV":
-            this.$router.push("/mapV")
+            this.$router.push("/mapV").catch(err => {})
           break;
 
           case "Vcarruaje":
-            this.$router.push("/Vcarruaje")
+            this.$router.push("/Vcarruaje").catch(err => {})
           break;
         
         default:

@@ -23,8 +23,7 @@
           <td>{{ props.item.title }}</td>
           <td>{{ props.item.url }}</td>
           <td>{{ props.item.albumId }}</td>
-              <v-btn color="indigo" class="white--text" @click="consultaUsers">Ver(sin codigo)</v-btn>
-
+          <v-btn color="indigo" class="white--text" @click="verAlbum(props.item.id,props.item.title,props.item.url,props.item.albumId)">Ver(sin codigo)</v-btn>
         </template>
       </v-data-table>
 
@@ -36,7 +35,7 @@
       >Buscar usuarios</v-btn>
       <br />
       <v-text-field
-      v-show="verDataTable"
+        v-show="verDataTable"
         v-model="userBuscado"
         :rules="nameRules"
         :counter="10"
@@ -221,8 +220,15 @@ export default {
       } else {
         this.usuariosBuscadosLongitud = 1;
       }
+    },
+    verAlbum(id,title,url,albumId) {
+      this.$store.commit("SET_IDFOTO", id);
+      this.$store.commit("SET_TITLE", title);
+      this.$store.commit("SET_URL", url);
+      this.$store.commit("SET_ALBUMID", albumId);
+
+      this.$router.push("/formAlbumV");
     }
- 
   }
 };
 </script>

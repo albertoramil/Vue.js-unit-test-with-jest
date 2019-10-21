@@ -12,6 +12,7 @@ import VistaBotonesCalculadora from './views/VistaBotonesCalculadora.vue'
 import Soluciones from './views/SolucionesV.vue'
 import Vcarruaje from './views/Vcarruaje.vue'
 
+import formAlbumV from './views/formAlbumV.vue'
 
 
 import DataTableV from './views/DataTableV.vue'
@@ -68,6 +69,13 @@ export default new Router({
       name: 'Vcarruaje',
       component: Vcarruaje
     },
+    {
+      path: '/formAlbumV',
+      name: 'formAlbumV',
+      component: formAlbumV
+    },
+
+
   ]
 
 

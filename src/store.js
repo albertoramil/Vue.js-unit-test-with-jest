@@ -10,18 +10,23 @@ export default new Vuex.Store({
       username: "",
       token: ""
     },
-    perros:{
-      edad:"",
-      genero:"",
-      linea:""
+    perros: {
+      edad: "",
+      genero: "",
+      linea: ""
 
-    },calculadoraVariables:{
-      primera:"",
-      segunda:"",
-      tercera:"",
-      resultado:"0.0",  
+    }, calculadoraVariables: {
+      primera: "",
+      segunda: "",
+      tercera: "",
+      resultado: "0.0",
       cientifica: true
 
+    }, foto: {
+      idfoto: ""
+      , title: ""
+      , url: ""
+      , albumId: ""
     }
   },
   getters: {
@@ -34,33 +39,45 @@ export default new Vuex.Store({
     getToken(state) {
       return state.auth.token
     },
-    getedad(state){
+    getedad(state) {
       return state.perros.edad
 
     },
-    getgenero(state){
+    getgenero(state) {
       return state.perros.genero
     },
-    getlinea(state){
+    getlinea(state) {
       return state.perros.linea
 
     },
-    getprimera(state){
+    getprimera(state) {
 
       return state.calculadoraVariables.primera
-},
-    getsegunda(state){
+    },
+    getsegunda(state) {
       return state.calculadoraVariables.segunda
 
     },
-    gettercera(state){
+    gettercera(state) {
       return state.calculadoraVariables.tercera
 
-    },getresultado(state){
+    }, getresultado(state) {
       return state.calculadoraVariables.resultado
 
-    },getcientifica(state){
+    }, getcientifica(state) {
       return state.calculadoraVariables.cientifica
+
+    }, getidfoto(state) {
+      return state.foto.idfoto
+
+    }, gettitle(state) {
+      return state.foto.title
+
+    }, geturl(state) {
+      return state.foto.url
+
+    }, getalbumId(state) {
+      return state.foto.albumId
 
     }
   },
@@ -68,7 +85,7 @@ export default new Vuex.Store({
     SET_LOGGED_IN(state, status) {
       state.auth.loggedIn = status;
     },
-    SET_USERNAME(state, username){
+    SET_USERNAME(state, username) {
       state.auth.username = username;
     },
     SET_TOKEN(state, token) {
@@ -76,7 +93,7 @@ export default new Vuex.Store({
     },
 
 
-    
+
     SET_EDAD(state, edad) {
       state.perros.edad = edad;
     },
@@ -94,12 +111,26 @@ export default new Vuex.Store({
     },
     SET_TERCERA(state, tercera) {
       state.calculadoraVariables.tercera = tercera;
-    },SET_RESULTADO(state, resultado) {
+    },
+    SET_RESULTADO(state, resultado) {
       state.calculadoraVariables.resultado = resultado;
-    },SET_CIENTIFICA(state, cientifica) {
+    },
+    SET_CIENTIFICA(state, cientifica) {
       state.calculadoraVariables.cientifica = cientifica;
+    },
+    SET_IDFOTO(state, idfoto) {
+      state.foto.idfoto = idfoto;
+    },
+    SET_TITLE(state, title) {
+      state.foto.title = title;
+    },
+    SET_URL(state, url) {
+      state.foto.url = url;
+    },
+    SET_ALBUMID(state, albumId) {
+      state.foto.albumId = albumId;
     }
-    }
+  }
 })
 
 // actions -> mutations -> state

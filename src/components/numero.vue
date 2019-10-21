@@ -14,21 +14,17 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-      primera: '',
-          
-
-
-    }
+      primera: ""
+    };
   },
   methods: {
     anadir() {
       console.log(this.numeroEntrada);
       if (this.$store.getters.getprimera == "") {
         this.$store.commit("SET_PRIMERA", this.numeroEntrada);
-        this.primera=this.$store.getters.getprimera
-        
+        this.primera = this.$store.getters.getprimera;
       } else {
         this.$store.commit("SET_SEGUNDA", this.numeroEntrada);
       }
@@ -40,9 +36,11 @@ export default {
       );
     }
   },
-    watch: {
+  watch: {
     primera: function() {
-      console.log("cambiooooooooooooooooooooooooooooooooooooooooooooooooooooooo watch")
+      console.log(
+        "cambiooooooooooooooooooooooooooooooooooooooooooooooooooooooo watch"
+      );
     }
   },
   props: {
