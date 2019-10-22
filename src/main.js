@@ -21,7 +21,6 @@ Vue.use(VueGoogleMaps, {
 });
 
 
- 
 Vue.prototype.$http = axios
 Vue.prototype.$axios = axios
 

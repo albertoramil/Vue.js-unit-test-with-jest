@@ -38,10 +38,13 @@
 
 
   </v-container>
+
+
+  
   <v-container>
   <salida min-height="500px"/>
 
-
+<navigationDrawer></navigationDrawer>
   </v-container>
 
   </v-content>
@@ -54,6 +57,10 @@
   import salida from '../components/salida.vue'
   import cientifica from '../components/cientifica.vue'
 
+  import navigationDrawer from '../components/navigationDrawer.vue'
+
+
+
   export default {
     name: 'Calculadora',
      data: () => ({
@@ -62,7 +69,9 @@
       
     }),
     components: {
-      MainLayout,numero,operacion,salida,cientifica
+      MainLayout,numero,operacion,salida,cientifica, navigationDrawer
+
+
     }
   }
 </script>
