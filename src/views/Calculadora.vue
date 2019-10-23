@@ -3,6 +3,46 @@
     <main-layout>  </main-layout> 
 
 
+<template>
+  <v-container class="grey lighten-5">
+    <v-row
+      class="mb-6"
+      no-gutters
+    >         
+      <v-col >
+    <numero numeroEntrada="7" />
+      </v-col>
+      <v-col >   
+    <numero numeroEntrada="8"/>
+      </v-col>
+       <v-col >   
+    <numero numeroEntrada="9"/>
+      </v-col>
+        <v-col >   
+    <numero numeroEntrada="9"/>
+      </v-col> <v-col >   
+    <numero numeroEntrada="9"/>
+      </v-col> <v-col >   
+    <numero numeroEntrada="9"/>
+      </v-col> <v-col >   
+    <numero numeroEntrada="9"/>
+      </v-col> <v-col >   
+    <numero numeroEntrada="9"/>
+      </v-col>
+       <v-col >   
+    <numero numeroEntrada="9"/>
+      </v-col>
+       <v-col >   
+    <numero numeroEntrada="9"/>
+      </v-col>
+       <v-col >   
+    <numero numeroEntrada="9"/>
+      </v-col>
+    </v-row>
+  </v-container>
+</template>
+
+
   <v-container>
     <numero numeroEntrada="7" />
     <numero numeroEntrada="8"/>
@@ -35,18 +75,16 @@
     <operacion operacionEntrada="C" />
     <operacion operacionEntrada="+" />
 
-
-
-  </v-container>
+ <GChart
+     
+    />  </v-container>
 
 
   
   <v-container>
   <salida min-height="500px"/>
-
-<navigationDrawer></navigationDrawer>
+<br>
   </v-container>
-
   </v-content>
 </template>
 
@@ -61,6 +99,12 @@
 
 
 
+  import GChart from '../components/GChart.vue'
+
+
+
+
+
   export default {
     name: 'Calculadora',
      data: () => ({
@@ -69,7 +113,7 @@
       
     }),
     components: {
-      MainLayout,numero,operacion,salida,cientifica, navigationDrawer
+      MainLayout,numero,operacion,salida,cientifica, navigationDrawer,GChart
 
 
     }

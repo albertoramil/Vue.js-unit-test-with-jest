@@ -4,9 +4,11 @@ import vuetify from './plugins/vuetify';
 import router from './router'
 import store from './store'
 import * as VueGoogleMaps from "vue2-google-maps";
+import VueGoogleCharts from 'vue-google-charts'
 
 Vue.config.productionTip = false
 
+Vue.use(VueGoogleCharts)
 
 
 import axios from 'axios'

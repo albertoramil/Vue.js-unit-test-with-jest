@@ -19,12 +19,12 @@
       </v-card-title>
 
       <v-data-table v-show="verDataTable" :headers="cabecera2" :items="info" :search="search">
-        <template v-slot:items="props">
-          <td>{{ props.item.title }}</td>
-          <td>{{ props.item.url }}</td>
-          <td>{{ props.item.albumId }}</td>
-          <v-btn color="indigo" class="white--text" @click="verAlbum(props.item.id,props.item.title,props.item.url,props.item.albumId)">Ver(sin codigo)</v-btn>
-        </template>
+        <v-btn
+          color="indigo"
+          class="white--text"
+          @click="verAlbum(props.item.id,props.item.title,props.item.url,props.item.albumId)"
+        >Ver(sin codigo)</v-btn>
+       
       </v-data-table>
 
       <v-btn
@@ -221,7 +221,7 @@ export default {
         this.usuariosBuscadosLongitud = 1;
       }
     },
-    verAlbum(id,title,url,albumId) {
+    verAlbum(id, title, url, albumId) {
       this.$store.commit("SET_IDFOTO", id);
       this.$store.commit("SET_TITLE", title);
       this.$store.commit("SET_URL", url);

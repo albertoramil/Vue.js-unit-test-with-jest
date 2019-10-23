@@ -2,7 +2,7 @@
   <v-card
     height="400"
     width="256"
-    class="mx-auto"
+    class="mx-right"
   >
     <v-navigation-drawer permanent>
       <v-list-item>
