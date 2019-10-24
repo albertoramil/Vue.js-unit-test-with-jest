@@ -75,17 +75,17 @@
     <operacion operacionEntrada="C" />
     <operacion operacionEntrada="+" />
 
- <GChart
-     
-    />  </v-container>
 
-
+  </v-container>
   
   <v-container>
   <salida min-height="500px"/>
 <br>
   </v-container>
+   <GChart/> 
+
   </v-content>
+
 </template>
 
 <script>

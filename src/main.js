@@ -10,10 +10,15 @@ Vue.config.productionTip = false
 
 Vue.use(VueGoogleCharts)
 
+import Trend from 'vuetrend';
 
+Vue.use(Trend);
 import axios from 'axios'
+import VueApexCharts from 'vue-apexcharts'
 
+Vue.use(VueApexCharts)
 
+Vue.component('apexchart', VueApexCharts)
 
 Vue.use(VueGoogleMaps, {
   load: {
